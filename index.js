@@ -5,6 +5,7 @@ const app = express();
 const path = require('path');
 const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
+const saltRounds = 10;
 //const PORT = process.env.PORT || 3000;//Para el servidor en la nube.
 //const cMongoUrl = 'mongodb+srv://admin:m19951225@cluster-nzn6e.gcp.mongodb.net/test?retryWrites=true&w=majority';
 
