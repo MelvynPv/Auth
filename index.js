@@ -6,6 +6,7 @@ const path = require('path');
 const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
 const saltRounds = 10;
+const cors = require('cors');
 //const PORT = process.env.PORT || 3000;//Para el servidor en la nube.
 //const cMongoUrl = 'mongodb+srv://admin:m19951225@cluster-nzn6e.gcp.mongodb.net/test?retryWrites=true&w=majority';
 
@@ -18,7 +19,7 @@ mongoose.connect(process.env.mongoUrl, {useNewUrlParser: true},(err) =>{
         console.log('Mongo Conectado correctamente');
     }
 });
-
+app.use(cors());
 //Settings
 app.set('PORT',process.env.PORT || process.env.PORT);
 app.set('views',path.join(__dirname),'views');
